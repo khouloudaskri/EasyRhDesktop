@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionEvenement.Egui.AjoutSoldeController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: FFCC80;" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../../../../../../../Desktop/Nouveau%20dossier%20(3)/Gestion_Conge/src/gestion_solde/ajoutsolde.css" />
+         </stylesheets>
+         <children>
+            <VBox layoutX="787.0" layoutY="219.0" prefHeight="179.0" prefWidth="162.0" spacing="35.0">
+               <children>
+                  <Label text="Nom et Prenom :" />
+                  <Label prefHeight="25.0" prefWidth="127.0" text="Congé annuel :" />
+                  <Label prefHeight="25.0" prefWidth="161.0" text="Congé de Compensation :" />
+                  <Label prefHeight="25.0" prefWidth="150.0" text="Congé Maladie :" />
+                  <Label prefHeight="25.0" prefWidth="124.0" text="Congé Exceptionnel :" />
+               </children>
+            </VBox>
+            <VBox layoutX="953.0" layoutY="222.0" prefHeight="179.0" prefWidth="79.0" spacing="25.0">
+               <children>
+                  <TextField fx:id="txtnom" style="-fx-border-color: #ff8c00;" />
+                  <TextField fx:id="annuel" opacity="0.91" style="-fx-border-color: #ff8c00;" />
+                  <TextField fx:id="compensation" layoutX="10.0" layoutY="10.0" opacity="0.91" style="-fx-border-color: #ff8c00;" />
+                  <TextField fx:id="maladie" layoutX="10.0" layoutY="60.0" opacity="0.91" style="-fx-border-color: #ff8c00;" />
+                  <TextField fx:id="exceptionnel" layoutX="10.0" layoutY="110.0" opacity="0.91" style="-fx-border-color: #ff8c00;" />
+               </children>
+            </VBox>
+            <Label graphicTextGap="7.0" layoutX="829.0" layoutY="158.0" text="Ajout Solde de Congé :" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="bt_ajouter2" layoutX="874.0" layoutY="476.0" mnemonicParsing="false" onAction="#ajouterSolde2" prefHeight="5.0" prefWidth="79.0" style="-fx-background-color: FFCC80;" text="Save" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tvsolde" layoutX="68.0" layoutY="219.0" prefHeight="255.0" prefWidth="604.0" style="-fx-border-color: FB8C00;">
+               <columns>
+                  <TableColumn fx:id="colidsolde" prefWidth="60.0" text="id_solde" />
+                  <TableColumn fx:id="colnom" onEditCommit="#editTitre" prefWidth="110.0" text="Nom employe" />
+                  <TableColumn fx:id="colcompensation" prefWidth="130.0" text="Solde Compensation" />
+                  <TableColumn fx:id="colmaladie" prefWidth="100.0" text="Solde Maladie" />
+                  <TableColumn fx:id="colexception" prefWidth="110.0" text="Solde Exception" />
+                  <TableColumn fx:id="colannuel" prefWidth="90.0" text="Solde Annuel" />
+               </columns>
+            </TableView>
+            <Button fx:id="searchim" layoutX="587.0" layoutY="91.0" mnemonicParsing="false" onAction="#bt_chercher" prefHeight="39.0" prefWidth="91.0" style="-fx-background-color: FFCC80;" text="SEARCH" underline="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextField fx:id="barrederecherche2" layoutX="388.0" layoutY="93.0" prefHeight="32.0" prefWidth="199.0" promptText="tapez Nom Employé" style="-fx-border-color: #ff8c00;" />
+            <Button fx:id="retour" layoutX="975.0" layoutY="547.0" mnemonicParsing="false" onAction="#bt_retour" prefHeight="39.0" prefWidth="91.0" style="-fx-background-color: FFCC80;" text="RETOUR" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <HBox prefHeight="53.0" prefWidth="1090.0" style="-fx-background-color: #ff8c00;">
+               <children>
+                  <Button fx:id="refresh2" mnemonicParsing="false" onAction="#bt_update2" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ff8c00;" text="update" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label layoutX="113.0" layoutY="100.0" text="Taper le Nom et Prénom de l'employé :">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="bt_sup" layoutX="565.0" layoutY="476.0" mnemonicParsing="false" onAction="#supprimersolde" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: FFCC80;" text="Supprimer" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

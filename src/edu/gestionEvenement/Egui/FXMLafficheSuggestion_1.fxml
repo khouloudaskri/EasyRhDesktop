@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="597.0" prefWidth="972.0" stylesheets="@ajouterevenement.fxml.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionEvenement.gui.FXMLafficheSuggestionController">
+   <children>
+      <TableView fx:id="tabl" layoutX="7.0" layoutY="127.0" prefHeight="298.0" prefWidth="451.0">
+        <columns>
+          <TableColumn fx:id="tnom" prefWidth="146.39999103546143" text="nom" />
+          <TableColumn fx:id="tsuggestions" prefWidth="386.40003967285156" text="Suggestions" />
+        </columns>
+      </TableView>
+      <Button fx:id="iretour" layoutX="7.0" layoutY="50.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: black;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="141.0" layoutY="78.0" text="Les Suggestions ">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="140.0" prefHeight="25.0" prefWidth="178.0" text=" destination's address :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="destad" layoutX="634.0" layoutY="140.0" prefHeight="25.0" prefWidth="312.0" promptText="example@example.com" />
+      <Label layoutX="479.0" layoutY="190.0" prefHeight="25.0" prefWidth="203.0" text="Tap your address :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="myad" layoutX="634.0" layoutY="190.0" prefHeight="25.0" prefWidth="312.0" promptText="example@gmail.com" />
+      <Label layoutX="484.0" layoutY="236.0" prefHeight="25.0" prefWidth="91.0" text="Password :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password" layoutX="634.0" layoutY="236.0" prefHeight="25.0" prefWidth="312.0" promptText="Abcd@1234" />
+      <Label layoutX="484.0" layoutY="286.0" prefHeight="25.0" prefWidth="91.0" text="Object :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="obj" layoutX="634.0" layoutY="286.0" prefHeight="25.0" prefWidth="312.0" promptText="Tap your object." />
+      <Label layoutX="484.0" layoutY="336.0" prefHeight="25.0" prefWidth="91.0" text="Message :">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="msg" layoutX="634.0" layoutY="336.0" prefHeight="133.0" prefWidth="312.0" promptText="Tap your message." />
+      <Button fx:id="send" defaultButton="true" layoutX="486.0" layoutY="440.0" mnemonicParsing="false" onAction="#SendEmail" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: black;" text="envoyer" textFill="#f4f2f2">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="559.0" layoutY="72.0" prefHeight="46.0" prefWidth="340.0" text="INVITATION PAR MAIL" textFill="#460d86">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="sent" layoutX="483.0" layoutY="391.0" prefHeight="35.0" prefWidth="106.0" text="Done !" textFill="#514e4e" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

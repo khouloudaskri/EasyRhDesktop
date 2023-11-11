@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionEvenement.Egui.ResultatdemandeController">
+   <children>
+      <AnchorPane layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="1100.0" style="-fx-background-color: FFCC80;">
+         <children>
+            <TableView fx:id="tvhistorique1" layoutX="188.0" layoutY="155.0" prefHeight="300.0" prefWidth="715.0" style="-fx-border-color: FB8C00;">
+               <columns>
+                  <TableColumn fx:id="colid1" prefWidth="60.0" text="id_Congé" />
+                  <TableColumn fx:id="colnomem2" minWidth="15.0" prefWidth="120.0" text="Date de Demande" />
+                  <TableColumn fx:id="coldepart1" prefWidth="90.0" text="Date de Depart" />
+                  <TableColumn minWidth="1.0" prefWidth="1.0" text="Nombre de Jours" />
+                  <TableColumn fx:id="colretour1" prefWidth="90.0" text="Date de Retour" />
+                  <TableColumn fx:id="colnbjr1" prefWidth="90.0" text="Nb jours" />
+                  <TableColumn fx:id="coltype1" prefWidth="87.0" text="Type" />
+                  <TableColumn fx:id="colmotif1" prefWidth="87.0" text="Motif" />
+                  <TableColumn fx:id="coletat2" prefWidth="87.0" text="Etat" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="nameuserR" layoutX="20.0" layoutY="20.0" onAction="#affichedemR" promptText="nom_employe" />
+      <Button fx:id="retour1" layoutX="995.0" layoutY="567.0" mnemonicParsing="false" onAction="#bt_retour1" prefHeight="39.0" prefWidth="91.0" style="-fx-background-color: FFCC80;" text="RETOUR" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="edu.gestionEvenement.Egui.FXMLacccController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="20.0" layoutY="20.0" prefHeight="692.0" prefWidth="1285.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@accueil.css" />
+         </stylesheets>
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3280c9" height="93.0" layoutX="31.0" stroke="BLACK" strokeType="INSIDE" width="1282.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e1fff" height="93.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Label layoutX="208.0" text="EasyRH" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="44.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nom" layoutX="80.0" layoutY="150.0" />
+            <TextField fx:id="prenom" layoutX="80.0" layoutY="184.0" />
+            <TextField fx:id="email" layoutX="80.0" layoutY="298.0" />
+            <TextField fx:id="poste" layoutX="80.0" layoutY="338.0" />
+            <TextField fx:id="password" layoutX="80.0" layoutY="254.0" />
+            <DatePicker fx:id="daten" layoutX="87.0" layoutY="544.0" />
+            <ComboBox fx:id="role" layoutX="80.0" layoutY="217.0" prefWidth="150.0" />
+            <TextField fx:id="tel" layoutX="81.0" layoutY="427.0" />
+            <TextField fx:id="numcarte" layoutX="80.0" layoutY="385.0" />
+            <TextField fx:id="situation" layoutX="91.0" layoutY="583.0" />
+            <TextField fx:id="civilite" layoutX="91.0" layoutY="506.0" />
+            <TextField fx:id="lieuxn" layoutX="91.0" layoutY="470.0" />
+            <TableView fx:id="view" layoutX="261.0" layoutY="174.0" prefHeight="448.0" prefWidth="961.0">
+               <columns>
+                  <TableColumn fx:id="idt" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="nomt" onEditCommit="#Editnom" prefWidth="75.0" text="Nom" />
+                  <TableColumn fx:id="prenomt" onEditCommit="#editprenom" prefWidth="75.0" text="Prenon" />
+                  <TableColumn fx:id="Rolet" onEditCommit="#editrole" prefWidth="75.0" text="Role" />
+                  <TableColumn fx:id="Passt" onEditCommit="#editpass" prefWidth="75.0" text="Password" />
+                  <TableColumn fx:id="emailt" prefWidth="75.0" text="Email" />
+                  <TableColumn fx:id="postet" onEditCommit="#editposte" prefWidth="75.0" text="Poste" />
+                  <TableColumn fx:id="cartet" prefWidth="75.0" text="N Carte Banquaire" />
+                  <TableColumn fx:id="telt" prefWidth="75.0" text="Tel" />
+                  <TableColumn fx:id="lieut" onEditCommit="#editlieu" prefWidth="75.0" text="Lieux naissance" />
+                  <TableColumn fx:id="civt" onEditCommit="#editciv" prefWidth="75.0" text="Civilité" />
+                  <TableColumn fx:id="datet" onEditCommit="#editdate" prefWidth="75.0" text="Date naissance" />
+                  <TableColumn fx:id="sitt" onEditCommit="#editsit" prefWidth="61.0" text="Situation" />
+               </columns>
+            </TableView>
+            <Label layoutX="30.0" layoutY="510.0" text="Civilité:" />
+            <Label layoutX="9.0" layoutY="474.0" text="Lieu Naissance" />
+            <Label layoutX="25.0" layoutY="431.0" text="Tel:" />
+            <Label layoutX="4.0" layoutY="389.0" text="N Carte bank" />
+            <Label layoutX="15.0" layoutY="342.0" text="Poste:" />
+            <Label layoutX="15.0" layoutY="293.0" text="Email:" />
+            <Label layoutX="2.0" layoutY="258.0" text="Password:" />
+            <Label layoutX="15.0" layoutY="221.0" text="Role:" />
+            <Label layoutX="7.0" layoutY="188.0" text="Prenom:" />
+            <Label layoutX="20.0" layoutY="145.0" text="Nom:" />
+            <Label layoutX="1.0" layoutY="548.0" text="Date Naissance" />
+            <Label layoutX="25.0" layoutY="587.0" text="Situation" />
+            <Button fx:id="affii" layoutX="306.0" layoutY="636.0" mnemonicParsing="false" onAction="#AfichU" text="Afficher" />
+            <Button fx:id="ajout" layoutX="119.0" layoutY="636.0" mnemonicParsing="false" onAction="#AjoutUu" text="Ajouter" />
+            <Button fx:id="supp" layoutX="411.0" layoutY="636.0" mnemonicParsing="false" onAction="#supU" text="Suprimer" />
+            <Button fx:id="ret" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" onAction="#retourr" text="Retour" />
+            <TextField fx:id="cher" layoutX="862.0" layoutY="120.0" />
+            <Button fx:id="search" layoutX="1037.0" layoutY="120.0" mnemonicParsing="false" onAction="#cheru" text="chercher" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

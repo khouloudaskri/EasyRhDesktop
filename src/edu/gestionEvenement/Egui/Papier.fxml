@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="edu.gestionEvenement.Egui.PapierController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="642.0" prefWidth="782.0" styleClass="root" stylesheets="@ajouterSuggesstion.fxml.css">
+         <children>
+            <TableView fx:id="table_P" layoutX="29.0" layoutY="50.0" prefHeight="180.0" prefWidth="566.0">
+               <columns>
+                  <TableColumn fx:id="table_type" prefWidth="284.0000057220459" text="Type" />
+                  <TableColumn fx:id="tablenometprenom" prefWidth="332.7999572753906" text="NomE" />
+               </columns>
+            </TableView>
+            <Button fx:id="back" layoutX="653.0" layoutY="562.0" mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="106.0" text="Back" />
+            <Label layoutX="139.0" layoutY="14.0" prefHeight="38.0" prefWidth="526.0" text="Papiers demandées par les employés :">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="afficher" layoutX="653.0" layoutY="118.0" mnemonicParsing="false" onAction="#afficherP" prefHeight="58.0" prefWidth="106.0" text="Afficher" />
+            <Label layoutX="29.0" layoutY="306.0" prefHeight="25.0" prefWidth="178.0" text=" destination's address :">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="destad" layoutX="184.0" layoutY="306.0" prefHeight="25.0" prefWidth="312.0" promptText="example@example.com" />
+            <Label layoutX="29.0" layoutY="356.0" prefHeight="25.0" prefWidth="203.0" text="Tap your address :">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="myad" layoutX="184.0" layoutY="356.0" prefHeight="25.0" prefWidth="312.0" promptText="example@gmail.com" />
+            <Label layoutX="34.0" layoutY="402.0" prefHeight="25.0" prefWidth="91.0" text="Password :">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="184.0" layoutY="402.0" prefHeight="25.0" prefWidth="312.0" promptText="Abcd@1234" />
+            <Label layoutX="34.0" layoutY="452.0" prefHeight="25.0" prefWidth="91.0" text="Object :">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="obj" layoutX="184.0" layoutY="452.0" prefHeight="25.0" prefWidth="312.0" promptText="Tap your object." />
+            <Label layoutX="34.0" layoutY="502.0" prefHeight="25.0" prefWidth="91.0" text="Message :">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="msg" layoutX="184.0" layoutY="501.0" prefHeight="58.0" prefWidth="318.0" promptText="Tap your message." />
+            <Button fx:id="send" defaultButton="true" layoutX="143.0" layoutY="577.0" mnemonicParsing="false" onAction="#SendEmail" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: black;" text="envoyer" textFill="#f4f2f2">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="109.0" layoutY="258.0" prefHeight="26.0" prefWidth="312.0" text="INVITATION PAR MAIL" textFill="#460d86">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="sent" layoutX="33.0" layoutY="557.0" prefHeight="35.0" prefWidth="106.0" text="Done !" textFill="#514e4e" visible="false">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

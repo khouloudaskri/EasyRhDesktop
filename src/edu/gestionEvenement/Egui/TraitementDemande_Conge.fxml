@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionEvenement.Egui.TraitementDemande_CongeController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: FFCC80;">
+         <children>
+            <TableView fx:id="tvtraitement" layoutX="212.0" layoutY="390.0" onMouseClicked="#getSelected" prefHeight="368.0" prefWidth="857.0" style="-fx-border-color: FB8C00;">
+               <columns>
+                  <TableColumn fx:id="coidconge" minWidth="15.0" prefWidth="60.0" text="id Conge" />
+                  <TableColumn fx:id="colnom" prefWidth="110.0" text="Nom Employe" />
+                  <TableColumn fx:id="coldatedemande" minWidth="1.0" prefWidth="110.0" text="Date de Demande" />
+                  <TableColumn fx:id="coldatedep" minWidth="6.0" prefWidth="88.0" text="date de depart" />
+                  <TableColumn fx:id="coldateret" prefWidth="100.0" text="date de retour" />
+                  <TableColumn fx:id="colnbjr" text="nb jours" />
+                  <TableColumn fx:id="coltypee" prefWidth="100.0" text="type" />
+                  <TableColumn fx:id="colmotiff" prefWidth="110.0" text="Motif" />
+                  <TableColumn fx:id="coletatt" prefWidth="100.0" text="Etat" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tvsolde" layoutX="485.0" layoutY="307.0" prefHeight="49.0" prefWidth="584.0" style="-fx-border-color: FB8C00;">
+               <columns>
+                  <TableColumn fx:id="colnomem" prefWidth="103.0" text="Nom_employe" />
+                  <TableColumn fx:id="colidsolde1" prefWidth="59.0" text="id Solde" />
+                  <TableColumn fx:id="colcompensation1" prefWidth="128.0" text="Solde Compensation" />
+                  <TableColumn fx:id="colmaladie1" prefWidth="88.0" text="Solde Maladie" />
+                  <TableColumn fx:id="colexception1" prefWidth="112.0" text="Solde exception" />
+                  <TableColumn fx:id="colannuel1" prefWidth="90.0" text="Solde annuel" />
+               </columns>
+            </TableView>
+            <Button fx:id="search" layoutX="401.0" layoutY="319.0" mnemonicParsing="false" onAction="#bt_chercher1" prefHeight="39.0" prefWidth="76.0" style="-fx-background-color: FFCC80;" text="search" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="barrederecherche" layoutX="212.0" layoutY="322.0" prefHeight="32.0" prefWidth="185.0" promptText="tapez  Nom_employe" style="-fx-border-color: #ff8c00;" />
+            <Button fx:id="accepter" layoutX="1128.0" layoutY="593.0" mnemonicParsing="false" onAction="#bt_AccepterConge" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #32CD32;" text="Accepter" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="refuser" layoutX="1128.0" layoutY="511.0" mnemonicParsing="false" onAction="#bt_RefuserConge" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #FF0000;" text="Refuser" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="soldjout" layoutX="1140.0" layoutY="429.0" mnemonicParsing="false" onAction="#bt_Ajoutrsold" prefHeight="32.0" prefWidth="92.0" text="Ajoute Solde" underline="true" />
+            <HBox prefHeight="49.0" prefWidth="1280.0" style="-fx-background-color: #ff8c00;">
+               <children>
+                  <Button fx:id="refresh" mnemonicParsing="false" onAction="#bt_update" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: #ff8c00;" text="update" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView fx:id="janvier1" fitHeight="180.0" fitWidth="240.0" layoutX="520.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <Accordion layoutX="51.0" layoutY="82.0" />
+            <ButtonBar layoutX="84.0" layoutY="109.0" prefHeight="40.0" prefWidth="200.0" />
+            <HBox layoutX="251.0" layoutY="66.0" prefHeight="32.0" prefWidth="778.0">
+               <children>
+                  <Button fx:id="janvier" mnemonicParsing="false" onAction="#bt_janvier" style="-fx-background-color: FFCC80;" text="Janvier" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fevrier" mnemonicParsing="false" onAction="#bt_fevrier" style="-fx-background-color: FFCC80;" text="Février" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="mars" mnemonicParsing="false" onAction="#bt_mars" style="-fx-background-color: FFCC80;" text="Mars" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="avril" mnemonicParsing="false" onAction="#bt_avril" style="-fx-background-color: FFCC80;" text="Avril" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="mai" mnemonicParsing="false" onAction="#bt_mai" style="-fx-background-color: FFCC80;" text="Mai" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="juin" mnemonicParsing="false" onAction="#bt_juin" style="-fx-background-color: FFCC80;" text="Juin" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="juillet" mnemonicParsing="false" onAction="#bt_juillet" style="-fx-background-color: FFCC80;" text="Juielet" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="aout" mnemonicParsing="false" onAction="#bt_aout" style="-fx-background-color: FFCC80;" text="Aout " underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="septembre" mnemonicParsing="false" onAction="#bt_septembre" style="-fx-background-color: FFCC80;" text="Septembre" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="octobre" mnemonicParsing="false" onAction="#bt_octobre" style="-fx-background-color: FFCC80;" text="Octobre" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="novembre" mnemonicParsing="false" onAction="#bt_novembre" style="-fx-background-color: FFCC80;" text="Novembre" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="decembre" mnemonicParsing="false" onAction="#bt_decembre" style="-fx-background-color: FFCC80;" text="Décembre" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView fx:id="fevrier1" fitHeight="180.0" fitWidth="240.0" layoutX="520.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mars1" fitHeight="180.0" fitWidth="240.0" layoutX="520.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="avril1" fitHeight="180.0" fitWidth="240.0" layoutX="520.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mai1" fitHeight="180.0" fitWidth="240.0" layoutX="520.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="juin1" fitHeight="180.0" fitWidth="240.0" layoutX="520.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="juillet1" fitHeight="180.0" fitWidth="240.0" layoutX="521.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="aout1" fitHeight="180.0" fitWidth="240.0" layoutX="521.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="septembre1" fitHeight="180.0" fitWidth="240.0" layoutX="521.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="octobre1" fitHeight="180.0" fitWidth="240.0" layoutX="521.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="novembre1" fitHeight="180.0" fitWidth="240.0" layoutX="521.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="decembre1" fitHeight="180.0" fitWidth="240.0" layoutX="521.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

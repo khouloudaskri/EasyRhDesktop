@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="1087.0" stylesheets="@ajouterevenement.fxml.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionEvenement.gui.ajouterEvenementController">
+   <children>
+      <Label layoutX="307.0" layoutY="30.0" text="Gestion Des Evenements " textFill="#0d0d0d">
+         <font>
+            <Font name="Berlin Sans FB" size="30.0" />
+         </font>
+      </Label>
+      <Pane layoutX="14.0" layoutY="113.0" prefHeight="266.0" prefWidth="360.0">
+         <children>
+            <Label layoutX="14.0" layoutY="24.0" text="titre " textFill="#fffcfc">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="60.0" text="type " textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="98.0" text="emplacement " textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font></Label>
+            <Label layoutX="13.0" layoutY="136.0" text="theme " textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font></Label>
+            <TextField fx:id="txttitre" layoutX="169.0" layoutY="21.0" />
+            <TextField fx:id="txtemplacement" layoutX="169.0" layoutY="95.0" />
+            <TextField fx:id="txttheme" layoutX="169.0" layoutY="134.0" />
+            <Label layoutX="9.0" layoutY="177.0" text="date Debut" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="222.0" text="date Fin" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="txtdateD" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="163.0" />
+            <DatePicker fx:id="txtdateF" layoutX="168.0" layoutY="220.0" prefHeight="25.0" prefWidth="163.0" />
+            <ComboBox fx:id="txttype" layoutX="168.0" layoutY="58.0" prefHeight="25.0" prefWidth="163.0" />
+         </children>
+      </Pane>
+      <Button fx:id="txtajouter" layoutX="20.0" layoutY="427.0" mnemonicParsing="false" onAction="#ajouterE" prefHeight="54.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table" layoutX="382.0" layoutY="113.0" prefHeight="266.0" prefWidth="584.0">
+        <columns>
+          <TableColumn fx:id="Cid" prefWidth="67.20001220703125" text="ID" />
+          <TableColumn fx:id="Ctitre" onEditCommit="#editTitre" prefWidth="83.20001220703125" text="Titre" />
+            <TableColumn fx:id="Ctype" onEditCommit="#editTitre" prefWidth="70.4000244140625" text="Type" />
+            <TableColumn fx:id="Cemplacement" onEditCommit="#editEmplacement" prefWidth="99.20001220703125" text="Emplacement" />
+            <TableColumn fx:id="Ctheme" onEditCommit="#editTheme" prefWidth="63.20001220703125" text="Theme" />
+            <TableColumn fx:id="CdateD" onEditCommit="#EditDateD" prefWidth="94.4000244140625" text="date Debut" />
+            <TableColumn fx:id="CdateF" onEditCommit="#editDateF" prefWidth="92.7999267578125" text="date Fin" />
+        </columns>
+      </TableView>
+      <Button fx:id="txtsupprimer" layoutX="265.0" layoutY="427.0" mnemonicParsing="false" onAction="#supprimerE" prefHeight="54.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="txtmodifier" layoutX="144.0" layoutY="427.0" mnemonicParsing="false" onAction="#modifierE" prefHeight="54.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="txtaffiche" layoutX="382.0" layoutY="427.0" mnemonicParsing="false" onAction="#afficherE" prefHeight="54.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Afficher">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="txtsuggestion" layoutX="500.0" layoutY="427.0" mnemonicParsing="false" onAction="#suggestionE" prefHeight="54.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Suggestions">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

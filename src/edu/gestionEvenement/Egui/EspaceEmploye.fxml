@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="edu.gestionEvenement.Egui.EspaceEmployeController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="610.0" prefWidth="1393.0" style="-fx-background-color: FFCC80;">
+         <children>
+            <VBox layoutX="811.0" layoutY="219.0" prefHeight="250.0" prefWidth="100.0" spacing="34.0">
+               <children>
+                  <Label fx:id="labelnom" text="Nom et Prenom :" />
+                  <Label prefHeight="25.0" prefWidth="127.0" text="Date de Départ :" />
+                  <Label prefHeight="25.0" prefWidth="136.0" text="Date de Retour :" />
+                  <Label prefHeight="25.0" prefWidth="150.0" text="Nombre de Jours :" />
+                  <Label prefHeight="25.0" prefWidth="124.0" text="Type de Congé :" />
+                  <Label prefHeight="25.0" prefWidth="66.0" text="Cause :" />
+               </children>
+            </VBox>
+            <VBox layoutX="919.0" layoutY="217.0" prefHeight="226.0" prefWidth="129.0" spacing="25.0">
+               <children>
+                  <TextField fx:id="txtnomp" style="-fx-border-color: #ff8c00;" />
+                  <DatePicker fx:id="date_de_depart" onAction="#getdatedep" style="-fx-border-color: #ff8c00;" />
+                  <DatePicker fx:id="date_de_retour" layoutX="10.0" layoutY="10.0" onAction="#getdateretour" style="-fx-border-color: #ff8c00;" />
+                  <TextField fx:id="nb_jour" opacity="0.91" style="-fx-border-color: #ff8c00;" />
+                  <ComboBox fx:id="type_congé" editable="true" onAction="#choix" prefHeight="25.0" prefWidth="100.0" style="-fx-border-color: #ff8c00;" visibleRowCount="3" />
+                  <TextField fx:id="cause" style="-fx-border-color: #ff8c00;" />
+               </children>
+            </VBox>
+            <Label graphicTextGap="7.0" layoutX="820.0" layoutY="164.0" text="Remplir une demande de Congé : " wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="-1.0" contrast="1.0" hue="-1.0" saturation="-1.0" />
+               </effect>
+            </Label>
+            <Label graphicTextGap="10.0" layoutX="37.0" layoutY="96.0" text="Votre  solde  de congé :" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="-1.0" contrast="1.0" hue="-1.0" saturation="1.0" />
+               </effect>
+            </Label>
+            <TableView fx:id="tvhistorique" layoutX="95.0" layoutY="198.0" prefHeight="300.0" prefWidth="618.0" style="-fx-border-color: FB8C00;">
+               <columns>
+                  <TableColumn fx:id="colid" prefWidth="60.0" text="id_Congé" />
+                  <TableColumn fx:id="colnomem" minWidth="15.0" prefWidth="120.0" text="Date de Demande" />
+                  <TableColumn fx:id="coldepart" onEditCommit="#editdepart" prefWidth="90.0" text="Date de Depart" />
+                  <TableColumn minWidth="1.0" prefWidth="1.0" text="Nombre de Jours" />
+                  <TableColumn fx:id="colretour" onEditCommit="#editretour" prefWidth="90.0" text="Date de Retour" />
+                  <TableColumn fx:id="colnbjr" onEditCommit="#editnbjr" prefWidth="90.0" text="Nb jours" />
+                  <TableColumn fx:id="coltype" onEditCommit="#edittype" prefWidth="87.0" text="Type" />
+                  <TableColumn fx:id="colmotif" onEditCommit="#editmotif" prefWidth="87.0" text="Motif" />
+               </columns>
+            </TableView>
+            <Button fx:id="supprimerdemande" layoutX="614.0" layoutY="505.0" mnemonicParsing="false" onAction="#supprimerdemande1" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: 212121;" text="Supprimer" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt_envoyer" layoutX="872.0" layoutY="538.0" mnemonicParsing="false" onAction="#envoyer_formulaire" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: 212121;" text="Ajouter" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <HBox prefHeight="53.0" prefWidth="1090.0" style="-fx-background-color: #ff8c00;">
+               <children>
+                  <Button fx:id="refreche" mnemonicParsing="false" onAction="#refresh" prefHeight="42.0" prefWidth="89.0" style="-fx-background-color: 212121;" text="update" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="nameuser" onAction="#affichedem" promptText="nom_employe" />
+               </children>
+            </HBox>
+            <TableView fx:id="tvsoldeem" layoutX="295.0" layoutY="76.0" prefHeight="53.0" prefWidth="584.0" style="-fx-border-color: FB8C00;">
+               <columns>
+                  <TableColumn fx:id="colnomem1" prefWidth="103.0" text="Nom_employe" />
+                  <TableColumn fx:id="colidsolde1" prefWidth="59.0" text="id Solde" />
+                  <TableColumn fx:id="colcompensation1" prefWidth="128.0" text="Solde Compensation" />
+                  <TableColumn fx:id="colmaladie1" prefWidth="88.0" text="Solde Maladie" />
+                  <TableColumn fx:id="colexception1" prefWidth="112.0" text="Solde exception" />
+                  <TableColumn fx:id="colannuel1" prefWidth="90.0" text="Solde annuel" />
+               </columns>
+            </TableView>
+            <Button fx:id="modifierdemande" layoutX="467.0" layoutY="506.0" mnemonicParsing="false" onAction="#modifierdemande" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: 212121;" text="voir Résultat" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
